@@ -9,10 +9,8 @@ export default function RegisterMobile() {
   const { query, isReady } = router
 
   const redirectToApp = () => {
-    const { account_id } = query
-    window.open(
-      `${APP_SCHEME}://deeplinks/register-success?account_id=${account_id}`
-    )
+    const { result } = query
+    window.open(`${APP_SCHEME}://deeplinks/pay-out-success?result=${result}`)
   }
 
   const showToast = (query) => {
@@ -20,10 +18,10 @@ export default function RegisterMobile() {
     if (result) {
       switch (result) {
         case "success":
-          toast.success("Registration completed")
+          toast.success("Payment completed")
           break
         case "failure":
-          toast.error("Registration failed or cancelled")
+          toast.error("Payment failed or cancelled")
           break
       }
     }
