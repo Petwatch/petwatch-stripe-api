@@ -11,8 +11,8 @@ const stripeAccount = async (req, res) => {
     })
     const accountLinks = await stripe.accountLinks.create({
       account: account.id,
-      refresh_url: `${host}/api/stripe/account/reauth?account_id=${account.id}`,
-      return_url: `${host}/register${mobile ? "-mobile" : ""}?account_id=${
+      refresh_url: `https://petwatch-stripe-api.onrender.com/api/stripe/account/reauth?account_id=${account.id}`,
+      return_url: `https://petwatch-stripe-api.onrender.com/register-mobile?account_id=${
         account.id
       }&result=success`,
       type: "account_onboarding",
