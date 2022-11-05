@@ -6,6 +6,7 @@ const stripeAccount = async (req, res) => {
   if (method === "GET") {
     // CREATE CONNECTED ACCOUNT
     const { mobile } = req.query
+
     const account = await stripe.accounts.create({
       type: "express",
     })
@@ -19,7 +20,7 @@ const stripeAccount = async (req, res) => {
     })
     if (mobile) {
       // In case of request generated from the flutter app, return a json response
-      res.status(200).json({ success: true, url: accountLinks.url })
+      res.status(200).json({ success: true, url: accountLinks.url, id: accountLinks.account })
     } else {
       // In case of request generated from the web app, redirect
       res.redirect(accountLinks.url)
