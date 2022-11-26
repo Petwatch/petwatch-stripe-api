@@ -12,7 +12,7 @@ admin.initializeApp();
 exports.myFunctionName = functions.firestore
     .document('building-codes/123456789/posts').onWrite((change, context) => {
       // ... Your code here
-    });
+  });
 
 export default function Home() {
   return (
