@@ -11,7 +11,7 @@ const paymentIntent = async (req, res) => {
   //Would be good to make customer creation optional, if we want to save customer credit card info for later use. 
   // 
   const customer = req.query.customer ?? await stripe.customers.create();
-  const ephemeralKey = await stripe.ephemeralKeys.create(
+    const ephemeralKey = await stripe.ephemeralKeys.create(
     {customer: customer.id ?? customer},
     {apiVersion: '2022-08-01'}
   );
@@ -22,6 +22,7 @@ const paymentIntent = async (req, res) => {
     automatic_payment_methods: {
       enabled: true,
     },
+    setup_future_usage: "off_session",
     application_fee_amount: appFee * 100,
     // line_items: [
     //   {
