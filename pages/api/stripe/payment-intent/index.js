@@ -6,16 +6,13 @@ const paymentIntent = async (req, res) => {
   const {
     account_id: accountId,
     amount,
-    title,
-    currency = "usd",
-    quantity,
-    mobile,
   } = req.query;
-  console.log(amount);
 
-  const customer = await stripe.customers.create();
+  //Would be good to make customer creation optional, if we want to save customer credit card info for later use. 
+  // 
+  const customer = req.query.customer ?? await stripe.customers.create();
   const ephemeralKey = await stripe.ephemeralKeys.create(
-    {customer: customer.id},
+    {customer: customer.id ?? customer},
     {apiVersion: '2022-08-01'}
   );
   
