@@ -19,14 +19,15 @@ const paymentIntent = async (req, res) => {
   const paymentIntent = await stripe.paymentIntents.create({
     amount: Math.round(amount)*100,
     currency: "usd",
+    customer: customer.id ?? customer,
     automatic_payment_methods: {
       enabled: true,
     },
-    setup_future_usage: "off_session",
+    setup_future_usage: "on_session",
     application_fee_amount: appFee * 100,
     // line_items: [
     //   {
-    //     name: title,
+    //     name: "test",
     //     /**
     //      * Multiplying by 100 because otherwise for example,
     //      * 149 becomes 1.49 on Stripe
@@ -52,7 +53,7 @@ const paymentIntent = async (req, res) => {
   })
   res.status(200).json({ paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
-    customer: customer.id,
+    customer: customer.id ?? customer,
     publishableKey: "pk_test_51LumtJJVJnx1h9JWy7XlZr7eutUu5FzaUtbLKrTwReTve1faSYJhkiUDO0lbsoDdzogCIepksB8AyaU3wgKy50wr00UuVZVwMq"})
 }
 
