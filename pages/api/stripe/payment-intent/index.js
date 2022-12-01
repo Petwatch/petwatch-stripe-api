@@ -6,6 +6,7 @@ const paymentIntent = async (req, res) => {
   const {
     account_id: accountId,
     amount,
+    email, 
   } = req.query;
 
   //Would be good to make customer creation optional, if we want to save customer credit card info for later use. 
@@ -25,31 +26,11 @@ const paymentIntent = async (req, res) => {
     },
     setup_future_usage: "on_session",
     application_fee_amount: appFee * 100,
-    // line_items: [
-    //   {
-    //     name: "test",
-    //     /**
-    //      * Multiplying by 100 because otherwise for example,
-    //      * 149 becomes 1.49 on Stripe
-    //      */
-    //     amount: Math.round(amount) * 100,
-    //     currency,
-    //     quantity,
-    //   },
-    // ],
+    receipt_email: email,
+    description: "Pet sitting your pet through Petwatch.",
     transfer_data: {
       destination: accountId,
     },
-    // payment_intent_data: {
-    //   /**
-    //    * Multiplying by 100 because otherwise for example,
-    //    * 149 becomes 1.49 on Stripe
-    //    */
-      
-    // },
-    // // mode: "payment",
-    // success_url: `${host}/pay-out${mobile ? "-mobile" : ""}?result=success`,
-    // cancel_url: `${host}/pay-out${mobile ? "-mobile" : ""}?result=failure`,
   })
   res.status(200).json({ paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
