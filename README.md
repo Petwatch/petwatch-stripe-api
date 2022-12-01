@@ -1,21 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Flutter Stripe Backend
-
-Code for the Flutter Stripe Backend project used in the tutorial "Flutter Marketplace app with Stripe Connect".
-
-## Blog Posts / Articles:
-
-- [Flutter Marketplace app with Stripe Connect - Part 1](https://ahsanayaz.com/flutter-marketplace-app-with-stripe-connect-part-1/)
-- [Flutter Marketplace app with Stripe Connect - Part 2](https://ahsanayaz.com/flutter-marketplace-app-with-stripe-connect-part-2/)
-
-## Video Tutorials:
-
-- [Flutter Marketplace app with Stripe Connect - Part 1 - Configuring Stripe & Seller Onboarding](https://www.youtube.com/watch?v=R2Okg53lUv8)
-- [Flutter Marketplace app with Stripe Connect - Part 2 - Deeplinking & paying for productss](https://youtu.be/wj5ieFnm0e4)
-
-## Getting Started
-
 ### Set Environment Variables
 
 The repository has an `.env.example` file that shows the necessary variables for the tutorial. Create a new file in the project named `.env.local` and fill the values accordingly based on your business requirements. Here is an example configuration:
@@ -60,22 +42,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Like my work?
-
-<a
-  title="Like Ahsan's work? Buy him a coffee"
-  class="bmac"
-  href="https://www.buymeacoffee.com/muhd.ahsanayaz">
-<img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=muhd.ahsanayaz&button_colour=BD5FFF&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" />
-</a>
-
-Or follow & connect with me on my Socials:
-
-[![GitHub Profile](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/ahsanayaz)
-[![LinkedIn Profile](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://www.linkedin.com/in/ahsanayaz)
-[![Twitter Profile](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://twitter.com/muhd_ahsanayaz)
-[![Instagram Profile](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://instagram.com/muhd.ahsanayaz)
-[![Facebook Profile](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://facebook.com/muhd.ahsanayaz)
-[![TikTok Profile](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@muhd.ahsanayaz)
-[![CodeZen Discord](https://img.shields.io/discord/814191682282717194.svg?label=CodeZen&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/rEBSSh926k)
