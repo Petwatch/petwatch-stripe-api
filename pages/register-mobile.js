@@ -9,10 +9,11 @@ export default function RegisterMobile() {
   const { query, isReady } = router
 
   const redirectToApp = () => {
-    const { account_id } = query
-    window.open(
-      `${APP_SCHEME}://deeplinks/register-success?account_id=${account_id}`
-    )
+    // const { account_id } = query
+    // window.open(
+    //   `${APP_SCHEME}://deeplinks/register-success?account_id=${account_id}`
+    // )
+    window.close();
   }
 
   const showToast = (query) => {

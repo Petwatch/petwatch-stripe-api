@@ -19,8 +19,6 @@ const stripeAccount = async (req, res) => {
       type: "account_onboarding",
     })
     if (mobile) {
-      // In case of request generated from the flutter app, return a json response
-      // console.log(account.id);
       res.status(200).json({ success: true, url: accountLinks.url, id: account.id })
     } else {
       // In case of request generated from the web app, redirect
@@ -35,9 +33,7 @@ const stripeAccount = async (req, res) => {
     const deleted = await stripe.accounts.del(id)
     res.status(200).json({ message: "account deleted successfully", deleted })
   } else if (method === "POST") {
-    // Retrieve the Connected Account for the provided ID
-    // I know it shouldn't be a POST call. Don't judge :D I had a lot on my plate
-    const account = await stripe.accounts.retrieve(req.query.id)
+    // Retrieve the Connected Account for the provided ID    const account = await stripe.accounts.retrieve(req.query.id)
     res.status(200).json({ account })
   }
 }
